@@ -36,9 +36,13 @@ EOF
 execute "Python hackernews.main()"
 
 
+noremap <buffer> <c-]> :Python hackernews.link()<cr>
 noremap <buffer> o :Python hackernews.link()<cr>
 noremap <buffer> O :Python hackernews.link(external=True)<cr>
 noremap <buffer> gx :Python hackernews.link(external=True)<cr>
+noremap <buffer> <c-t> :Python hackernews.save_pos()<cr>
+                   \u
+                   \:Python hackernews.recall_pos("undo")<cr>
 noremap <buffer> u :Python hackernews.save_pos()<cr>
                    \u
                    \:Python hackernews.recall_pos("undo")<cr>
